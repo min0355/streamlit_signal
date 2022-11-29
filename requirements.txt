@@ -1,7 +1,7 @@
 time
-pandas==1.5.1
-numpy==1.21.5
-streamlit==1.15.1
-joblib==1.1.1
-plotly==5.4.0
-keras==2.7.0
+pandas
+numpy
+streamlit
+joblib
+plotly
+keras
