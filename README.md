@@ -1,1 +1,1 @@
-# pretrained model : 0.997
+# signal pre-trained model (GRU) : f1-score 0.997
