@@ -10,16 +10,16 @@ from keras.models import load_model
 
 
 st.set_page_config(
-    page_title="BTV_AV4 8K Spindle Survival Test (72 hr)",
+    page_title="Signal Test",
     layout="wide",
 )
 
 
 
 # Data Prepare
-FilePath = "/home/kym/ML/output/btv_spd/streamlit/TEST_AV4_8K_72 hr survival_augmentation.csv"
-scaler_call = joblib.load("/home/kym/ML/output/btv_spd/streamlit/btv_spd_rscaler.pkl")
-model_call = load_model("/home/kym/ML/output/btv_spd/streamlit/btv_av4_spd_pretrained_model.h5")
+FilePath = "/home/kym/ML/output/btv_spd/streamlit/signal_augmentation.csv"
+scaler_call = joblib.load("/home/kym/ML/output/btv_spd/streamlit/signal_rscaler.pkl")
+model_call = load_model("/home/kym/ML/output/btv_spd/streamlit/signal_pretrained_model.h5")
 
 @st.experimental_memo
 def get_data() -> pd.DataFrame:
@@ -33,7 +33,7 @@ df_length = df.shape[0]
 
 # dash-board title
 
-st.title("AV4 8K Spindle Max Survival Test (72 hr)")
+st.title("Signal Test (72 hr)")
 
 
 
@@ -89,7 +89,7 @@ for minutes in range(df_length):
         
         Spd_Graph, Fail_Ratio, Spd_Data = st.columns((2,1,1))
         with Spd_Graph:
-            st.markdown("## Spindle Condition")
+            st.markdown("## Product Condition")
             fig = make_subplots(rows=2, cols=1,
                                 subplot_titles=("Sensor Signal", "Motor Speed"))
             fig.update_layout(margin=dict(l = 20,
